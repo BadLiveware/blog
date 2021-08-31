@@ -5,4 +5,4 @@ script_name=`basename "$0"`
 
 cd "$script_dir/../blog/"
 npm install
-npm build
+npm run build
