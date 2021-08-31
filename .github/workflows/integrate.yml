@@ -35,4 +35,5 @@ jobs:
           BRANCH: gh-pages
           FOLDER: ./blog/out
           CLEAN: true
+          CLEAN-EXCLUDE: CNAME
           # SSH-KEY: ${{ secrets.SSH_KEY }}
