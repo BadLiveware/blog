@@ -23,17 +23,16 @@ jobs:
 
       - name: Install and Build
         uses: actions/setup-node@v1
-      - run: npm install
-      - run: npm run build
-      - run: npm run export
-        env:
+      - run: chmod -R +x ./scripts/
+      - run: ./scripts/export.sh
+        env: 
           CI: true
-      - run: touch out/.nojekyll
+      - run: touch ./blog/out/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           SSH-KEY: ${{ secrets.SSH_KEY }}
           BRANCH: gh-pages
-          FOLDER: out
+          FOLDER: ./blog/out
           CLEAN: true
